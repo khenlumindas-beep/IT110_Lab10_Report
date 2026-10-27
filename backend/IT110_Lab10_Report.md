@@ -13,20 +13,19 @@ Project layout: `backend/main.py` (app object `main:app`).
 
 ```bash
 cd backend
-venv\Scripts\activate
-uvicorn main:app --host 127.0.0.1 --port 8000
+python -m uvicorn main:app --reload --host 127.0.0.1 --port 8001
 ```
 
-The project normally runs on port **5000** for the Flutter client. Port **8000** was used for this activity to match the laboratory URL. Startup output ended with:
+The project normally runs on port **5000** for the Flutter client. Port **8001** was used for this activity because port 8000 was already in use. Startup output ended with:
 
 ```
 Database initialized successfully
 Application startup complete.
-Uvicorn running on http://127.0.0.1:8000
+Uvicorn running on http://127.0.0.1:8001
 ```
 
-Interactive docs: `http://127.0.0.1:8000/api/docs`
-OpenAPI schema: `http://127.0.0.1:8000/api/openapi.json`
+Interactive docs: `http://127.0.0.1:8001/api/docs`
+OpenAPI schema: `http://127.0.0.1:8001/api/openapi.json`
 
 ---
 
@@ -34,7 +33,7 @@ OpenAPI schema: `http://127.0.0.1:8000/api/openapi.json`
 
 | Item | Result |
 |---|---|
-| URL | `http://127.0.0.1:8000/health` |
+| URL | `http://127.0.0.1:8001/health` |
 | Status | **200 OK** |
 | Body | `{"status":"ok"}` |
 | Screenshot | `docs/activity10/S01_health.png` |
@@ -104,7 +103,7 @@ Remaining feature groups were inventoried through `/docs` and `/api/openapi.json
 
 ## 6. Evidence authenticity and secret handling
 
-- All screenshots come from the running backend at `127.0.0.1:8000`.
+- All screenshots come from the running backend at `127.0.0.1:8001`.
 - Bearer tokens and passwords were masked (DOM-level redaction) before capture: `"access_token": "REDACTED"`, `"password": "********"`. Status codes, paths and response shapes are unmodified.
 - `backend/.env` is not tracked by Git; `.env.example` contains placeholders only.
 - Hard-coded mock credentials were removed from `routes/auth.py` as part of this activity.
