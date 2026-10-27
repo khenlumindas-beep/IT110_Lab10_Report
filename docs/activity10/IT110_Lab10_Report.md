@@ -95,7 +95,7 @@ Remaining feature groups were inventoried through `/docs` and `/api/openapi.json
 | **A — Before** | `POST /api/auth/login` with `{"email":"oige@csucc.edu.ph","password":"WrongPass!"}` → **401 Unauthorized**; body `{"detail":"Invalid email or password"}`. Screenshot: `E01_before_login_401.png` |
 | **B — Diagnosis** | Status 401 is the documented authentication failure, i.e. an expected negative test — not a backend defect. The endpoint correctly rejects a bad credential and does not reveal whether the email exists. |
 | **C — After** | Same endpoint with the valid test credential → **200 OK** with token payload (`expires_in: 1800`). Screenshot: `F01_login_200.png` |
-| **D — Record** | Endpoint is covered by the backend test suite; security fixes committed in `c987580`. |
+| **D — Record** | Endpoint is covered by the backend test suite; security fixes and documentation committed. Repository: https://github.com/khenlumindas-beep/IT110_Lab10_Report | Commit: `7ec7a85` |
 
 **Additional correction (pre-test):** the root `/health` path returned 404 because only `/api/health` existed. `GET /health → {"status":"ok"}` was implemented in `main.py`; after state is `S01_health.png`. (The 404 was observed in the terminal before the route existed; no before screenshot is claimed.)
 
