@@ -2,12 +2,24 @@
 .env
 backend/.env
 
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+
 # Python
 __pycache__/
 *.pyc
 .venv/
 backend/venv/
 *.egg-info/
+
+# Logs
+backend/logs/
+logs/
+
+# Uploads
+backend/uploads/
 
 # Flutter / Dart
 mobile_app/.dart_tool/
@@ -17,9 +29,6 @@ mobile_app/.packages
 mobile_app/pubspec.lock.bak
 
 # Runtime data (user uploads, logs) — never distribute
-backend/uploads/
-backend/logs/
-logs/
 backups/
 
 # IDE / OS
